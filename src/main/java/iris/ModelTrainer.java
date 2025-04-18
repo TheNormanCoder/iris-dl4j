@@ -44,10 +44,10 @@ public class ModelTrainer {
             model.fit(iterator);
         }
 
-        // Salva il modello dopo l'addestramento
+        
         try {
             File modelFile = new File("modelli/irisModel.zip");
-            modelFile.getParentFile().mkdirs(); // Crea la cartella se non esiste
+            modelFile.getParentFile().mkdirs(); 
             model.save(modelFile, true);
             System.out.println(" Modello salvato in: " + modelFile.getAbsolutePath());
         } catch (Exception e) {
