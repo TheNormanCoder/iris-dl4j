@@ -12,6 +12,15 @@ import java.util.Arrays;
 
 public class ModelPredictor {
 
+    public static MultiLayerNetwork loadModel() {
+        try {
+            File modelFile = new File("modelli/irisModel.zip");
+            return MultiLayerNetwork.load(modelFile, true);
+        } catch (Exception e) {
+            throw new RuntimeException("Errore nel caricamento del modello", e);
+        }
+    }
+
     public static void predict(MultiLayerNetwork model) {
         IrisDataSetIterator testIterator = new IrisDataSetIterator(1, 150);
 
